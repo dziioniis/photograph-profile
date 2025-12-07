@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -94,8 +95,11 @@ const NotFound = styled.div`
 `;
 
 export default function CategoryPage() {
+  const t = useTranslations('portfolio');
   const params = useParams();
   const categorySlug = params.category as string;
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
 
   const category = getCategoryBySlug(categorySlug);
 
@@ -103,9 +107,9 @@ export default function CategoryPage() {
     return (
       <Container>
         <NotFound>
-          <h1>Category Not Found</h1>
-          <p>The category you are looking for does not exist.</p>
-          <Link href="/portfolio">Back to Portfolio</Link>
+          <h1>{t('notFound.category.title')}</h1>
+          <p>{t('notFound.category.description')}</p>
+          <Link href={`${prefix}/portfolio`}>{t('notFound.backToPortfolio')}</Link>
         </NotFound>
       </Container>
     );
@@ -116,13 +120,17 @@ export default function CategoryPage() {
   return (
     <Container>
       <Header>
-        <Title>{category.title} Photography</Title>
-        {category.description && <Description>{category.description}</Description>}
+        <Title>
+          {t(`categories.${categorySlug}.title`)} {t('photography')}
+        </Title>
+        {category.description && (
+          <Description>{t(`categories.${categorySlug}.description`)}</Description>
+        )}
       </Header>
 
       <SeriesGrid>
         {seriesList.map((series, index) => (
-          <Link key={series.id} href={`/portfolio/${categorySlug}/${series.id}`}>
+          <Link key={series.id} href={`${prefix}/portfolio/${categorySlug}/${series.id}`}>
             <SeriesCard
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

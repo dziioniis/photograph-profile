@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -166,18 +168,22 @@ const CTAButton = styled(Link)`
 `;
 
 export default function HomePage() {
+  const t = useTranslations('home');
+  const tp = useTranslations('portfolio');
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
+
   return (
     <>
       <Hero />
 
       <Section>
-        <SectionTitle>Portfolio</SectionTitle>
-        <SectionSubtitle>
-          Explore my work across different photography styles
-        </SectionSubtitle>
+        <SectionTitle>{t('portfolio.title')}</SectionTitle>
+        <SectionSubtitle>{t('portfolio.subtitle')}</SectionSubtitle>
         <CategoriesGrid>
           {categories.map((category, index) => (
-            <Link key={category.id} href={`/portfolio/${category.slug}`}>
+            <Link key={category.id} href={`${prefix}/portfolio/${category.slug}`}>
               <CategoryCard
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -185,8 +191,12 @@ export default function HomePage() {
               >
                 <CategoryImage $imageUrl={category.coverPhoto?.src || ''} />
                 <CategoryOverlay>
-                  <CategoryTitle>{category.title}</CategoryTitle>
-                  <CategoryDescription>{category.description}</CategoryDescription>
+                  <CategoryTitle>
+                    {tp(`categories.${category.slug}.title`)}
+                  </CategoryTitle>
+                  <CategoryDescription>
+                    {tp(`categories.${category.slug}.description`)}
+                  </CategoryDescription>
                 </CategoryOverlay>
               </CategoryCard>
             </Link>
@@ -195,10 +205,8 @@ export default function HomePage() {
       </Section>
 
       <Section>
-        <SectionTitle>Shop</SectionTitle>
-        <SectionSubtitle>
-          Presets, courses, and resources to elevate your photography
-        </SectionSubtitle>
+        <SectionTitle>{t('shop.title')}</SectionTitle>
+        <SectionSubtitle>{t('shop.subtitle')}</SectionSubtitle>
         <ProductsGrid>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -207,10 +215,8 @@ export default function HomePage() {
       </Section>
 
       <Section>
-        <SectionTitle>What Clients Say</SectionTitle>
-        <SectionSubtitle>
-          Hear from those who trusted me with their precious moments
-        </SectionSubtitle>
+        <SectionTitle>{t('testimonials.title')}</SectionTitle>
+        <SectionSubtitle>{t('testimonials.subtitle')}</SectionSubtitle>
         <TestimonialsContainer>
           {testimonials.slice(0, 3).map((testimonial, index) => (
             <TestimonialCard
@@ -233,9 +239,9 @@ export default function HomePage() {
 
       <Section>
         <CTASection>
-          <h2>Ready to Book Your Session?</h2>
-          <p>Let's create beautiful memories together</p>
-          <CTAButton href="/contact">Get in Touch</CTAButton>
+          <h2>{t('cta.title')}</h2>
+          <p>{t('cta.subtitle')}</p>
+          <CTAButton href={`${prefix}/contact`}>{t('cta.button')}</CTAButton>
         </CTASection>
       </Section>
     </>

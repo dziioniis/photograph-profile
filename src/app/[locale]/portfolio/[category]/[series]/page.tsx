@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -67,9 +68,12 @@ const NotFound = styled.div`
 `;
 
 export default function SeriesPage() {
+  const t = useTranslations('portfolio');
   const params = useParams();
   const categorySlug = params.category as string;
   const seriesId = params.series as string;
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
 
   const series = getSeriesById(seriesId);
 
@@ -77,9 +81,9 @@ export default function SeriesPage() {
     return (
       <Container>
         <NotFound>
-          <h1>Series Not Found</h1>
-          <p>The series you are looking for does not exist.</p>
-          <Link href="/portfolio">Back to Portfolio</Link>
+          <h1>{t('notFound.series.title')}</h1>
+          <p>{t('notFound.series.description')}</p>
+          <Link href={`${prefix}/portfolio`}>{t('notFound.backToPortfolio')}</Link>
         </NotFound>
       </Container>
     );
@@ -89,9 +93,11 @@ export default function SeriesPage() {
     <Container>
       <Header>
         <Breadcrumb>
-          <Link href="/portfolio">Portfolio</Link>
+          <Link href={`${prefix}/portfolio`}>{t('title')}</Link>
           <span>/</span>
-          <Link href={`/portfolio/${categorySlug}`}>{categorySlug}</Link>
+          <Link href={`${prefix}/portfolio/${categorySlug}`}>
+            {t(`categories.${categorySlug}.title`)}
+          </Link>
           <span>/</span>
           <span>{series.title}</span>
         </Breadcrumb>
@@ -102,7 +108,9 @@ export default function SeriesPage() {
           {series.date && <span>•</span>}
           {series.date && <span>{new Date(series.date).toLocaleDateString()}</span>}
           <span>•</span>
-          <span>{series.photos.length} photos</span>
+          <span>
+            {series.photos.length} {t('photos')}
+          </span>
         </Details>
       </Header>
 
@@ -110,7 +118,7 @@ export default function SeriesPage() {
         <VideoPreview>
           <video controls>
             <source src={series.videoPreviewUrl} type="video/mp4" />
-            Your browser does not support the video tag.
+            {t('videoNotSupported')}
           </video>
         </VideoPreview>
       )}

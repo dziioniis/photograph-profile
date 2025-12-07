@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "title": "Photographer | Professional Photography & Videography",
+    "description": "Professional photographer specializing in weddings, portraits, and family photography. Capturing your precious moments with timeless elegance.",
+    "keywords": "photographer, wedding photography, portrait photography, family photography, videography"
+  },
+  "header": {
+    "logo": "PHOTOGRAPHER",
+    "nav": {
+      "portfolio": "Portfolio",
+      "video": "Video",
+      "shop": "Shop",
+      "about": "About",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "toggleMenu": "Toggle menu"
+  },
+  "home": {
+    "hero": {
+      "title": "Capturing Moments That Last Forever",
+      "subtitle": "Professional photography for weddings, portraits, and families",
+      "cta": {
+        "portfolio": "View Portfolio",
+        "book": "Book Your Session"
+      },
+      "scroll": "Scroll"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "subtitle": "Explore my work across different photography styles"
+    },
+    "shop": {
+      "title": "Shop",
+      "subtitle": "Presets, courses, and resources to elevate your photography"
+    },
+    "testimonials": {
+      "title": "What Clients Say",
+      "subtitle": "Hear from those who trusted me with their precious moments"
+    },
+    "cta": {
+      "title": "Ready to Book Your Session?",
+      "subtitle": "Let's create beautiful memories together",
+      "button": "Get in Touch"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Browse through my collection of work across different photography styles",
+    "categories": {
+      "wedding": {
+        "title": "Wedding",
+        "description": "Capturing your special day with timeless elegance and emotion"
+      },
+      "portrait": {
+        "title": "Portrait",
+        "description": "Individual sessions that showcase your unique personality"
+      },
+      "family": {
+        "title": "Family",
+        "description": "Preserving precious family moments for generations to come"
+      }
+    },
+    "series": {
+      "location": "Location",
+      "date": "Date",
+      "viewGallery": "View Full Gallery",
+      "backToCategory": "Back to {category}"
+    },
+    "errors": {
+      "categoryNotFound": "Category Not Found",
+      "categoryNotFoundMessage": "The category you are looking for does not exist.",
+      "seriesNotFound": "Series Not Found",
+      "seriesNotFoundMessage": "The series you are looking for does not exist."
+    },
+    "notFound": {
+      "category": {
+        "title": "Category Not Found",
+        "description": "The category you are looking for does not exist."
+      },
+      "series": {
+        "title": "Series Not Found",
+        "description": "The series you are looking for does not exist."
+      },
+      "backToPortfolio": "Back to Portfolio"
+    },
+    "photography": "Photography",
+    "photos": "photos",
+    "videoNotSupported": "Your browser does not support the video tag."
+  },
+  "shop": {
+    "title": "Shop",
+    "subtitle": "Explore professional photography presets, comprehensive courses, and premium learning kits",
+    "types": {
+      "preset": "Digital Preset",
+      "online_course": "Online Course",
+      "physical": "Physical Product",
+      "product": "Product"
+    },
+    "product": {
+      "from": "From",
+      "price": "${price}",
+      "features": "Features",
+      "beforeAfter": "Before & After",
+      "modules": "Course Modules",
+      "module": "Module {number}: {title}",
+      "viewDetails": "View Details",
+      "buyNow": "Buy Now",
+      "addToCart": "Add to Cart",
+      "orderOnInstagram": "Order on Instagram",
+      "processing": "Processing..."
+    },
+    "errors": {
+      "productNotFound": "Product Not Found",
+      "productNotFoundMessage": "The product you are looking for does not exist."
+    },
+    "notFound": {
+      "title": "Product Not Found",
+      "description": "The product you are looking for does not exist.",
+      "backToShop": "Back to Shop"
+    },
+    "checkoutError": "Failed to initiate checkout. Please try again.",
+    "viewDetails": "View Details",
+    "orderOnInstagram": "Order on Instagram",
+    "buyNow": "Buy Now",
+    "processing": "Processing...",
+    "courseModules": "Course Modules",
+    "module": "Module",
+    "duration": "Duration"
+  },
+  "videos": {
+    "title": "Videography",
+    "subtitle": "Cinematic stories that capture the essence of your special moments",
+    "videoNotSupported": "Your browser does not support the video tag."
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate photographer dedicated to capturing life's special moments",
+    "intro": {
+      "p1": "Hi, I'm a professional photographer and videographer based in New York City with over 10 years of experience capturing life's most precious moments.",
+      "p2": "My journey into photography began with a passion for storytelling. I believe every photograph should tell a story, evoke emotion, and preserve memories that last a lifetime.",
+      "p3": "I specialize in wedding, portrait, and family photography, bringing a minimalist yet emotional approach to every session. My goal is to create timeless images that you'll treasure for generations."
+    },
+    "approach": {
+      "title": "My Approach",
+      "description": "I believe in creating authentic, timeless images that tell your unique story. Every session is tailored to your needs and personality.",
+      "p1": "I combine technical expertise with an artistic eye to create photographs that are both beautiful and authentic. I work closely with each client to understand their vision and ensure every session is relaxed, fun, and memorable.",
+      "p2": "Whether it's a wedding, family session, or portrait shoot, I focus on capturing genuine moments and natural expressions. My editing style is clean and timeless, emphasizing natural light and authentic colors."
+    },
+    "equipment": {
+      "title": "Equipment",
+      "description": "I use professional-grade equipment to ensure the highest quality results"
+    }
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "subtitle": "What people say about working with me",
+    "videoNotSupported": "Your browser does not support the video tag."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's discuss your photography needs and create something beautiful together",
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "availability": "Availability",
+      "availabilityText": "I'm currently booking sessions 2-3 months in advance. Reach out today to secure your date!",
+      "services": "Services",
+      "servicesItems": {
+        "wedding": "Wedding Photography",
+        "portrait": "Portrait Sessions",
+        "family": "Family Photography",
+        "videography": "Videography"
+      },
+      "follow": "Follow Me"
+    },
+    "availability": {
+      "title": "Availability",
+      "description": "I'm currently booking sessions 2-3 months in advance. For urgent requests, please mention it in your message."
+    },
+    "services": {
+      "title": "Services",
+      "wedding": "Wedding Photography & Videography",
+      "portrait": "Portrait Sessions",
+      "family": "Family Photography",
+      "commercial": "Commercial Projects"
+    },
+    "followMe": "Follow Me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "eventType": "Event Type",
+      "eventDate": "Event Date",
+      "message": "Message",
+      "placeholder": {
+        "eventType": "Wedding, Portrait, Family, etc."
+      },
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you for your message! I'll get back to you soon.",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "about": {
+      "title": "About",
+      "description": "Professional photographer and videographer capturing your most precious moments with artistry and passion."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "portfolio": "Portfolio",
+      "videos": "Videos",
+      "shop": "Shop",
+      "about": "About",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "services": {
+      "title": "Services",
+      "wedding": "Wedding Photography",
+      "portrait": "Portrait Sessions",
+      "family": "Family Photography",
+      "videography": "Videography"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "social": "Follow Me",
+    "copyright": "© {year} Photographer. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Not Found",
+    "backHome": "Back to Home",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "of": "of"
+  }
+}

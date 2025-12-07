@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -104,13 +105,13 @@ const sampleVideos = [
 ];
 
 export default function VideosPage() {
+  const t = useTranslations('videos');
+
   return (
     <Container>
       <Header>
-        <Title>Videography</Title>
-        <Subtitle>
-          Cinematic stories that capture the essence of your special moments
-        </Subtitle>
+        <Title>{t('title')}</Title>
+        <Subtitle>{t('subtitle')}</Subtitle>
       </Header>
 
       <VideosGrid>
@@ -124,7 +125,7 @@ export default function VideosPage() {
             <VideoContainer>
               <video controls>
                 <source src={video.videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
+                {t('videoNotSupported')}
               </video>
             </VideoContainer>
             <VideoInfo>

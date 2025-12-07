@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import ContactForm from '@/components/ContactForm';
 
@@ -80,48 +81,45 @@ const SocialLink = styled.a`
 `;
 
 export default function ContactPage() {
+  const t = useTranslations('contact');
+
   return (
     <Container>
       <Header>
-        <Title>Get in Touch</Title>
-        <Subtitle>
-          Let's discuss your project and create something beautiful together
-        </Subtitle>
+        <Title>{t('title')}</Title>
+        <Subtitle>{t('subtitle')}</Subtitle>
       </Header>
 
       <ContentGrid>
         <ContactInfo>
           <InfoSection>
-            <InfoTitle>Contact Information</InfoTitle>
+            <InfoTitle>{t('info.title')}</InfoTitle>
             <InfoText>
-              <strong>Email:</strong> contact@photographer.com
+              <strong>{t('info.email')}:</strong> contact@photographer.com
             </InfoText>
             <InfoText>
-              <strong>Phone:</strong> +1 (555) 123-4567
+              <strong>{t('info.phone')}:</strong> +1 (555) 123-4567
             </InfoText>
             <InfoText>
-              <strong>Location:</strong> New York, NY
-            </InfoText>
-          </InfoSection>
-
-          <InfoSection>
-            <InfoTitle>Availability</InfoTitle>
-            <InfoText>
-              I'm currently booking sessions 2-3 months in advance. For urgent requests, please
-              mention it in your message.
+              <strong>{t('info.location')}:</strong> New York, NY
             </InfoText>
           </InfoSection>
 
           <InfoSection>
-            <InfoTitle>Services</InfoTitle>
-            <InfoText>• Wedding Photography & Videography</InfoText>
-            <InfoText>• Portrait Sessions</InfoText>
-            <InfoText>• Family Photography</InfoText>
-            <InfoText>• Commercial Projects</InfoText>
+            <InfoTitle>{t('availability.title')}</InfoTitle>
+            <InfoText>{t('availability.description')}</InfoText>
           </InfoSection>
 
           <InfoSection>
-            <InfoTitle>Follow Me</InfoTitle>
+            <InfoTitle>{t('services.title')}</InfoTitle>
+            <InfoText>• {t('services.wedding')}</InfoText>
+            <InfoText>• {t('services.portrait')}</InfoText>
+            <InfoText>• {t('services.family')}</InfoText>
+            <InfoText>• {t('services.commercial')}</InfoText>
+          </InfoSection>
+
+          <InfoSection>
+            <InfoTitle>{t('followMe')}</InfoTitle>
             <SocialLinks>
               <SocialLink
                 href="https://instagram.com"

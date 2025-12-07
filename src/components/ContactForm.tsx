@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -91,6 +92,7 @@ const Message = styled.div<{ $type: 'success' | 'error' }>`
 `;
 
 export default function ContactForm() {
+  const t = useTranslations('contact.form');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -100,7 +102,6 @@ export default function ContactForm() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -112,7 +113,6 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    setErrorMessage('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -138,7 +138,6 @@ export default function ContactForm() {
       });
     } catch (error) {
       setStatus('error');
-      setErrorMessage('Failed to send message. Please try again.');
     }
   };
 
@@ -150,15 +149,13 @@ export default function ContactForm() {
       transition={{ duration: 0.5 }}
     >
       {status === 'success' && (
-        <Message $type="success">
-          Thank you for your message! I'll get back to you soon.
-        </Message>
+        <Message $type="success">{t('success')}</Message>
       )}
 
-      {status === 'error' && <Message $type="error">{errorMessage}</Message>}
+      {status === 'error' && <Message $type="error">{t('error')}</Message>}
 
       <FormGroup>
-        <Label htmlFor="name">Name *</Label>
+        <Label htmlFor="name">{t('name')} *</Label>
         <Input
           type="text"
           id="name"
@@ -170,7 +167,7 @@ export default function ContactForm() {
       </FormGroup>
 
       <FormGroup>
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email">{t('email')} *</Label>
         <Input
           type="email"
           id="email"
@@ -182,7 +179,7 @@ export default function ContactForm() {
       </FormGroup>
 
       <FormGroup>
-        <Label htmlFor="phone">Phone</Label>
+        <Label htmlFor="phone">{t('phone')}</Label>
         <Input
           type="tel"
           id="phone"
@@ -193,19 +190,19 @@ export default function ContactForm() {
       </FormGroup>
 
       <FormGroup>
-        <Label htmlFor="eventType">Event Type</Label>
+        <Label htmlFor="eventType">{t('eventType')}</Label>
         <Input
           type="text"
           id="eventType"
           name="eventType"
-          placeholder="Wedding, Portrait, Family, etc."
+          placeholder={t('placeholder.eventType')}
           value={formData.eventType}
           onChange={handleChange}
         />
       </FormGroup>
 
       <FormGroup>
-        <Label htmlFor="eventDate">Event Date</Label>
+        <Label htmlFor="eventDate">{t('eventDate')}</Label>
         <Input
           type="date"
           id="eventDate"
@@ -216,7 +213,7 @@ export default function ContactForm() {
       </FormGroup>
 
       <FormGroup>
-        <Label htmlFor="message">Message *</Label>
+        <Label htmlFor="message">{t('message')} *</Label>
         <TextArea
           id="message"
           name="message"
@@ -227,7 +224,7 @@ export default function ContactForm() {
       </FormGroup>
 
       <SubmitButton type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Sending...' : 'Send Message'}
+        {status === 'loading' ? t('sending') : t('submit')}
       </SubmitButton>
     </FormContainer>
   );

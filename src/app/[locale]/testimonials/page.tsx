@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { testimonials } from '@/data/testimonials';
@@ -108,13 +109,13 @@ const VideoContainer = styled.div`
 `;
 
 export default function TestimonialsPage() {
+  const t = useTranslations('testimonials');
+
   return (
     <Container>
       <Header>
-        <Title>Client Testimonials</Title>
-        <Subtitle>
-          What my clients say about working with me
-        </Subtitle>
+        <Title>{t('title')}</Title>
+        <Subtitle>{t('subtitle')}</Subtitle>
       </Header>
 
       <TestimonialsGrid>
@@ -129,7 +130,7 @@ export default function TestimonialsPage() {
               <VideoContainer>
                 <video controls>
                   <source src={testimonial.videoUrl} type="video/mp4" />
-                  Your browser does not support the video tag.
+                  {t('videoNotSupported')}
                 </video>
               </VideoContainer>
             )}

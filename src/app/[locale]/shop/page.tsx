@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
@@ -39,13 +40,13 @@ const ProductsGrid = styled.div`
 `;
 
 export default function ShopPage() {
+  const t = useTranslations('shop');
+
   return (
     <Container>
       <Header>
-        <Title>Shop</Title>
-        <Subtitle>
-          Explore professional photography presets, comprehensive courses, and premium learning kits
-        </Subtitle>
+        <Title>{t('title')}</Title>
+        <Subtitle>{t('subtitle')}</Subtitle>
       </Header>
 
       <ProductsGrid>

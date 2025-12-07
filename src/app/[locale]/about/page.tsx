@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -71,10 +72,12 @@ const EquipmentItem = styled.li`
 `;
 
 export default function AboutPage() {
+  const t = useTranslations('about');
+
   return (
     <Container>
       <Header>
-        <Title>About Me</Title>
+        <Title>{t('title')}</Title>
       </Header>
 
       <ContentGrid>
@@ -91,36 +94,17 @@ export default function AboutPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Paragraph>
-            Hi, I'm a professional photographer and videographer based in New York City with over 10
-            years of experience capturing life's most precious moments.
-          </Paragraph>
-          <Paragraph>
-            My journey into photography began with a passion for storytelling. I believe every
-            photograph should tell a story, evoke emotion, and preserve memories that last a
-            lifetime.
-          </Paragraph>
-          <Paragraph>
-            I specialize in wedding, portrait, and family photography, bringing a minimalist yet
-            emotional approach to every session. My goal is to create timeless images that you'll
-            treasure for generations.
-          </Paragraph>
+          <Paragraph>{t('intro.p1')}</Paragraph>
+          <Paragraph>{t('intro.p2')}</Paragraph>
+          <Paragraph>{t('intro.p3')}</Paragraph>
         </TextSection>
       </ContentGrid>
 
-      <SectionTitle>My Approach</SectionTitle>
-      <Paragraph>
-        I combine technical expertise with an artistic eye to create photographs that are both
-        beautiful and authentic. I work closely with each client to understand their vision and
-        ensure every session is relaxed, fun, and memorable.
-      </Paragraph>
-      <Paragraph>
-        Whether it's a wedding, family session, or portrait shoot, I focus on capturing genuine
-        moments and natural expressions. My editing style is clean and timeless, emphasizing natural
-        light and authentic colors.
-      </Paragraph>
+      <SectionTitle>{t('approach.title')}</SectionTitle>
+      <Paragraph>{t('approach.p1')}</Paragraph>
+      <Paragraph>{t('approach.p2')}</Paragraph>
 
-      <SectionTitle>Equipment</SectionTitle>
+      <SectionTitle>{t('equipment.title')}</SectionTitle>
       <EquipmentList>
         <EquipmentItem>Canon EOS R5</EquipmentItem>
         <EquipmentItem>Canon RF 24-70mm f/2.8L</EquipmentItem>

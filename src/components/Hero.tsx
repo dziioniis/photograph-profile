@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -136,11 +138,16 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = 'Capturing Moments',
-  subtitle = 'Professional Photography & Videography',
+  title,
+  subtitle,
   backgroundImage,
   showCTA = true,
 }: HeroProps) {
+  const t = useTranslations('home.hero');
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
+
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -157,14 +164,14 @@ export default function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {title}
+          {title || t('title')}
         </HeroTitle>
         <HeroSubtitle
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {subtitle}
+          {subtitle || t('subtitle')}
         </HeroSubtitle>
         {showCTA && (
           <CTAButtons
@@ -172,11 +179,11 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button href="/portfolio" $variant="primary">
-              View Portfolio
+            <Button href={`${prefix}/portfolio`} $variant="primary">
+              {t('cta.portfolio')}
             </Button>
-            <Button href="/contact" $variant="secondary">
-              Book a Session
+            <Button href={`${prefix}/contact`} $variant="secondary">
+              {t('cta.book')}
             </Button>
           </CTAButtons>
         )}
@@ -187,7 +194,7 @@ export default function Hero({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1 }}
       >
-        <span>Scroll</span>
+        <span>{t('scroll')}</span>
         <ScrollLine
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}

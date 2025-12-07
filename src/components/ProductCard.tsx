@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -110,20 +112,24 @@ const formatPrice = (cents: number, currency: string = 'USD') => {
   }).format(cents / 100);
 };
 
-const getProductTypeLabel = (type: Product['type']) => {
+const getProductTypeLabel = (type: Product['type'], t: any) => {
   switch (type) {
     case 'preset':
-      return 'Digital Preset';
+      return t('types.preset');
     case 'online_course':
-      return 'Online Course';
+      return t('types.online_course');
     case 'physical':
-      return 'Physical Product';
+      return t('types.physical');
     default:
-      return 'Product';
+      return t('types.product');
   }
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const t = useTranslations('shop');
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
   const mainImage = product.images[0];
 
   return (
@@ -143,12 +149,14 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
       </ImageContainer>
       <CardContent>
-        <ProductType>{getProductTypeLabel(product.type)}</ProductType>
+        <ProductType>{getProductTypeLabel(product.type, t)}</ProductType>
         <Title>{product.title}</Title>
         <Description>{product.description}</Description>
         <PriceContainer>
           <Price>{formatPrice(product.priceCents, product.currency)}</Price>
-          <ViewButton href={`/shop/${product.slug}`}>View Details</ViewButton>
+          <ViewButton href={`${prefix}/shop/${product.slug}`}>
+            {t('viewDetails')}
+          </ViewButton>
         </PriceContainer>
       </CardContent>
     </Card>

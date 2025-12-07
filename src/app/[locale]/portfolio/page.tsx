@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -86,16 +88,19 @@ const CategoryDescription = styled.p`
 `;
 
 export default function PortfolioPage() {
+  const t = useTranslations('portfolio');
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
+
   return (
     <Container>
-      <Title>Portfolio</Title>
-      <Subtitle>
-        Browse through my collection of work across different photography styles
-      </Subtitle>
+      <Title>{t('title')}</Title>
+      <Subtitle>{t('subtitle')}</Subtitle>
 
       <Grid>
         {categories.map((category, index) => (
-          <Link key={category.id} href={`/portfolio/${category.slug}`}>
+          <Link key={category.id} href={`${prefix}/portfolio/${category.slug}`}>
             <CategoryCard
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -103,8 +108,12 @@ export default function PortfolioPage() {
             >
               <CategoryImage $imageUrl={category.coverPhoto?.src || ''} />
               <CategoryOverlay>
-                <CategoryTitle>{category.title}</CategoryTitle>
-                <CategoryDescription>{category.description}</CategoryDescription>
+                <CategoryTitle>
+                  {t(`categories.${category.slug}.title`)}
+                </CategoryTitle>
+                <CategoryDescription>
+                  {t(`categories.${category.slug}.description`)}
+                </CategoryDescription>
               </CategoryOverlay>
             </CategoryCard>
           </Link>

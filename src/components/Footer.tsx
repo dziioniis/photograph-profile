@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import Link from 'next/link';
 
@@ -87,66 +89,98 @@ const Copyright = styled.div`
 `;
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
   const currentYear = new Date().getFullYear();
 
   return (
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <FooterTitle>About</FooterTitle>
-          <FooterText>
-            Professional photographer and videographer specializing in weddings, portraits, and
-            family photography.
-          </FooterText>
+          <FooterTitle>{t('about.title')}</FooterTitle>
+          <FooterText>{t('about.description')}</FooterText>
           <SocialLinks>
-            <SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <SocialLink
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               IG
             </SocialLink>
-            <SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <SocialLink
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               FB
             </SocialLink>
-            <SocialLink href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <SocialLink
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
               YT
             </SocialLink>
           </SocialLinks>
         </FooterSection>
 
         <FooterSection>
-          <FooterTitle>Quick Links</FooterTitle>
+          <FooterTitle>{t('quickLinks.title')}</FooterTitle>
           <FooterLinks>
-            <FooterLink href="/portfolio">Portfolio</FooterLink>
-            <FooterLink href="/videos">Videos</FooterLink>
-            <FooterLink href="/shop">Shop</FooterLink>
-            <FooterLink href="/about">About</FooterLink>
-            <FooterLink href="/testimonials">Testimonials</FooterLink>
-            <FooterLink href="/contact">Contact</FooterLink>
+            <FooterLink href={`${prefix}/portfolio`}>
+              {t('quickLinks.portfolio')}
+            </FooterLink>
+            <FooterLink href={`${prefix}/videos`}>
+              {t('quickLinks.videos')}
+            </FooterLink>
+            <FooterLink href={`${prefix}/shop`}>{t('quickLinks.shop')}</FooterLink>
+            <FooterLink href={`${prefix}/about`}>{t('quickLinks.about')}</FooterLink>
+            <FooterLink href={`${prefix}/testimonials`}>
+              {t('quickLinks.testimonials')}
+            </FooterLink>
+            <FooterLink href={`${prefix}/contact`}>
+              {t('quickLinks.contact')}
+            </FooterLink>
           </FooterLinks>
         </FooterSection>
 
         <FooterSection>
-          <FooterTitle>Services</FooterTitle>
+          <FooterTitle>{t('services.title')}</FooterTitle>
           <FooterLinks>
-            <FooterLink href="/portfolio/wedding">Wedding Photography</FooterLink>
-            <FooterLink href="/portfolio/portrait">Portrait Photography</FooterLink>
-            <FooterLink href="/portfolio/family">Family Photography</FooterLink>
-            <FooterLink href="/videos">Videography</FooterLink>
+            <FooterLink href={`${prefix}/portfolio/wedding`}>
+              {t('services.wedding')}
+            </FooterLink>
+            <FooterLink href={`${prefix}/portfolio/portrait`}>
+              {t('services.portrait')}
+            </FooterLink>
+            <FooterLink href={`${prefix}/portfolio/family`}>
+              {t('services.family')}
+            </FooterLink>
+            <FooterLink href={`${prefix}/videos`}>
+              {t('services.videography')}
+            </FooterLink>
           </FooterLinks>
         </FooterSection>
 
         <FooterSection>
-          <FooterTitle>Contact</FooterTitle>
+          <FooterTitle>{t('contact.title')}</FooterTitle>
           <FooterText>
-            Email: contact@photographer.com
+            {t('contact.email')}: contact@photographer.com
             <br />
-            Phone: +1 (555) 123-4567
+            {t('contact.phone')}: +1 (555) 123-4567
             <br />
-            Location: New York, NY
+            {t('contact.location')}: New York, NY
           </FooterText>
         </FooterSection>
       </FooterContent>
 
       <Copyright>
-        &copy; {currentYear} Photographer. All rights reserved.
+        {t('copyright', { year: currentYear })}
       </Copyright>
     </FooterContainer>
   );
