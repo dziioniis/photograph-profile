@@ -5,7 +5,7 @@
     "keywords": "photographer, wedding photography, portrait photography, family photography, videography"
   },
   "header": {
-    "logo": "PHOTOGRAPHER",
+    "logo": "Marihryn Studio",
     "nav": {
       "portfolio": "Portfolio",
       "video": "Video",
@@ -22,7 +22,8 @@
       "subtitle": "Professional photography for weddings, portraits, and families",
       "cta": {
         "portfolio": "View Portfolio",
-        "book": "Book Your Session"
+        "book": "Book Your Session",
+        "instagram": "Contact on Instagram"
       },
       "scroll": "Scroll"
     },
@@ -188,6 +189,7 @@
       "commercial": "Commercial Projects"
     },
     "followMe": "Follow Me",
+    "instagramButton": "Contact on Instagram",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -232,7 +234,7 @@
       "location": "Location"
     },
     "social": "Follow Me",
-    "copyright": "© {year} Photographer. All rights reserved."
+    "copyright": "© {year} Marihryn Studio. All rights reserved."
   },
   "common": {
     "loading": "Loading...",

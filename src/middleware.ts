@@ -8,6 +8,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Match all pathnames except for API routes, static files, etc.
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  // Match all pathnames except for API routes, the Sanity Studio, static files, etc.
+  matcher: ['/((?!api|studio|_next|_vercel|.*\\..*).*)'],
 };

@@ -135,6 +135,7 @@ interface HeroProps {
   subtitle?: string;
   backgroundImage?: string;
   showCTA?: boolean;
+  instagramUrl?: string;
 }
 
 export default function Hero({
@@ -142,6 +143,7 @@ export default function Hero({
   subtitle,
   backgroundImage,
   showCTA = true,
+  instagramUrl,
 }: HeroProps) {
   const t = useTranslations('home.hero');
   const params = useParams();
@@ -182,24 +184,20 @@ export default function Hero({
             <Button href={`${prefix}/portfolio`} $variant="primary">
               {t('cta.portfolio')}
             </Button>
-            <Button href={`${prefix}/contact`} $variant="secondary">
-              {t('cta.book')}
-            </Button>
+            {instagramUrl && (
+              <Button
+                as="a"
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                $variant="secondary"
+              >
+                {t('cta.instagram')}
+              </Button>
+            )}
           </CTAButtons>
         )}
       </HeroContent>
-      <ScrollIndicator
-        onClick={scrollToContent}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1 }}
-      >
-        <span>{t('scroll')}</span>
-        <ScrollLine
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        />
-      </ScrollIndicator>
     </HeroSection>
   );
 }

@@ -4,6 +4,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { notFound } from 'next/navigation';
 import { testimonials } from '@/data/testimonials';
 
 const Container = styled.div`
@@ -109,6 +110,10 @@ const VideoContainer = styled.div`
 `;
 
 export default function TestimonialsPage() {
+  // Отзывы временно скрыты — страница недоступна напрямую.
+  // Чтобы вернуть, удалите следующую строку.
+  if (true as boolean) notFound();
+
   const t = useTranslations('testimonials');
 
   return (

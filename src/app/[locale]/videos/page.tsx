@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { notFound } from 'next/navigation';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -105,6 +106,9 @@ const sampleVideos = [
 ];
 
 export default function VideosPage() {
+  // Видео временно скрыто — страница недоступна напрямую. Удалите строку ниже, чтобы вернуть.
+  if (true as boolean) notFound();
+
   const t = useTranslations('videos');
 
   return (

@@ -182,10 +182,12 @@ export default function Header() {
 
   const navItems = [
     { label: t('nav.portfolio'), href: '/portfolio' },
-    { label: t('nav.video'), href: '/videos' },
+    // Видео временно скрыто
+    // { label: t('nav.video'), href: '/videos' },
     { label: t('nav.shop'), href: '/shop' },
     { label: t('nav.about'), href: '/about' },
-    { label: t('nav.testimonials'), href: '/testimonials' },
+    // Отзывы временно скрыты
+    // { label: t('nav.testimonials'), href: '/testimonials' },
     { label: t('nav.contact'), href: '/contact' },
   ];
 

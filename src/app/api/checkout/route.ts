@@ -1,15 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createCheckoutSession } from '@/lib/stripe';
-import { getProductBySlug } from '@/data/products';
+import { getProductById } from '@/lib/products';
 
 export async function POST(request: NextRequest) {
   try {
     const { productId } = await request.json();
 
-    // In a real app, you would fetch the product from your database
-    // For now, we'll use a simple product lookup
-    const products = await import('@/data/products');
-    const product = products.products.find((p) => p.id === productId);
+    const product = await getProductById(productId);
 
     if (!product) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });

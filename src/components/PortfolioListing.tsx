@@ -1,0 +1,129 @@
+'use client';
+
+import React from 'react';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import type { Category } from '@/types/models';
+
+const Container = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.spacing['3xl']} ${({ theme }) => theme.spacing.lg};
+  padding-top: calc(80px + ${({ theme }) => theme.spacing['2xl']});
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+`;
+
+const Subtitle = styled.p`
+  text-align: center;
+  color: ${({ theme }) => theme.colors.textLight};
+  max-width: 600px;
+  margin: 0 auto ${({ theme }) => theme.spacing['3xl']};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+`;
+
+const Grid = styled.div`
+  display: grid;
+  /* Карточки фиксированной максимальной ширины, выравнивание влево —
+     одна категория не растягивается на всю страницу. */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
+  justify-content: start;
+  gap: ${({ theme }) => theme.spacing.xl};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const CategoryCard = styled(motion.div)`
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  overflow: hidden;
+  cursor: pointer;
+`;
+
+const CategoryImage = styled.div<{ $imageUrl: string }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(${({ $imageUrl }) => $imageUrl});
+  background-size: cover;
+  background-position: center;
+  transition: transform ${({ theme }) => theme.transitions.slow};
+
+  ${CategoryCard}:hover & {
+    transform: scale(1.05);
+  }
+`;
+
+const CategoryOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: ${({ theme }) => theme.spacing.xl};
+  color: white;
+`;
+
+const CategoryTitle = styled.h2`
+  font-size: ${({ theme }) => theme.fontSizes['4xl']};
+  color: white;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+`;
+
+const CategoryDescription = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  color: rgba(255, 255, 255, 0.9);
+`;
+
+export default function PortfolioListing({
+  categories,
+}: {
+  categories: Category[];
+}) {
+  const t = useTranslations('portfolio');
+  const params = useParams();
+  const locale = (params.locale as string) || 'en';
+  const prefix = locale === 'en' ? '' : `/${locale}`;
+
+  return (
+    <Container>
+      <Title>{t('title')}</Title>
+      <Subtitle>{t('subtitle')}</Subtitle>
+
+      <Grid>
+        {categories.map((category, index) => (
+          <Link key={category.id} href={`${prefix}/portfolio/${category.slug}`}>
+            <CategoryCard
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <CategoryImage $imageUrl={category.coverPhoto?.src || ''} />
+              <CategoryOverlay>
+                <CategoryTitle>{category.title}</CategoryTitle>
+                {category.description && (
+                  <CategoryDescription>{category.description}</CategoryDescription>
+                )}
+              </CategoryOverlay>
+            </CategoryCard>
+          </Link>
+        ))}
+      </Grid>
+    </Container>
+  );
+}

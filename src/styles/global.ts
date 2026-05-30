@@ -22,6 +22,18 @@ export const GlobalStyles = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSizes.base};
     line-height: 1.6;
     overflow-x: hidden;
+    /* Прижимаем футер к низу экрана, даже когда контента мало (пустая категория и т.п.) */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex-shrink: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {

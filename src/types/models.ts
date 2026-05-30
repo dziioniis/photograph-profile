@@ -64,6 +64,19 @@ export type Testimonial = {
   date?: string;
 };
 
+export type SocialLink = {
+  label: string;
+  url: string;
+};
+
+export type ContactSettings = {
+  email?: string;
+  phone?: string;
+  location?: string;
+  instagram?: string;
+  socials: SocialLink[];
+};
+
 export type ContactFormData = {
   name: string;
   email: string;
