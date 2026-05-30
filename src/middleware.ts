@@ -7,6 +7,7 @@ export default createMiddleware({
   localePrefix: 'as-needed', // English at /, Ukrainian at /uk
 });
 
+
 export const config = {
   // Match all pathnames except for API routes, the Sanity Studio, static files, etc.
   matcher: ['/((?!api|studio|_next|_vercel|.*\\..*).*)'],
