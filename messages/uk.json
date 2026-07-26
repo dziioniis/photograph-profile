@@ -5,7 +5,7 @@
     "keywords": "фотограф, весільна фотографія, портретна фотографія, сімейна фотографія, відеографія"
   },
   "header": {
-    "logo": "Marihryn Studio",
+    "logo": "Marihryn",
     "nav": {
       "portfolio": "Портфоліо",
       "video": "Відео",
@@ -283,7 +283,7 @@
       "location": "Локація"
     },
     "social": "Слідкуйте за Мною",
-    "copyright": "© {year} Marihryn Studio. Всі права захищені."
+    "copyright": "© {year} Marihryn. Всі права захищені."
   },
   "common": {
     "loading": "Завантаження...",

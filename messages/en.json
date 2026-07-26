@@ -5,7 +5,7 @@
     "keywords": "photographer, wedding photography, portrait photography, family photography, videography"
   },
   "header": {
-    "logo": "Marihryn Studio",
+    "logo": "Marihryn",
     "nav": {
       "portfolio": "Portfolio",
       "video": "Video",
@@ -283,7 +283,7 @@
       "location": "Location"
     },
     "social": "Follow Me",
-    "copyright": "© {year} Marihryn Studio. All rights reserved."
+    "copyright": "© {year} Marihryn. All rights reserved."
   },
   "common": {
     "loading": "Loading...",
