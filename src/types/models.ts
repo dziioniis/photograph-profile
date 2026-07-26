@@ -71,7 +71,6 @@ export type SocialLink = {
 
 export type ContactSettings = {
   email?: string;
-  phone?: string;
   location?: string;
   instagram?: string;
   socials: SocialLink[];

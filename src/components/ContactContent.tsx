@@ -103,11 +103,6 @@ export default function ContactContent({
               <strong>{t('info.email')}:</strong> {settings.email}
             </InfoText>
           )}
-          {settings.phone && (
-            <InfoText>
-              <strong>{t('info.phone')}:</strong> {settings.phone}
-            </InfoText>
-          )}
           {settings.location && (
             <InfoText>
               <strong>{t('info.location')}:</strong> {settings.location}

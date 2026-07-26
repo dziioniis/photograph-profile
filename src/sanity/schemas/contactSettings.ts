@@ -13,11 +13,6 @@ export const contactSettings = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'phone',
-      title: 'Phone',
-      type: 'string',
-    }),
-    defineField({
       name: 'location',
       title: 'Location',
       type: 'string',
