@@ -26,7 +26,7 @@ const PRODUCT_PROJECTION = groq`{
   title,
   "slug": slug.current,
   type,
-  description,
+  "description": coalesce(description[$locale], description.en, description),
   priceCents,
   currency,
   images,
@@ -78,10 +78,11 @@ function mapProduct(raw: RawProduct): Product {
   };
 }
 
-export async function getProducts(): Promise<Product[]> {
+export async function getProducts(locale: string = 'en'): Promise<Product[]> {
   try {
     const raw = await sanityClient.fetch<RawProduct[]>(
-      groq`*[_type == "product"] | order(_createdAt asc) ${PRODUCT_PROJECTION}`
+      groq`*[_type == "product"] | order(_createdAt asc) ${PRODUCT_PROJECTION}`,
+      { locale }
     );
     return raw.map(mapProduct);
   } catch (error) {
@@ -90,11 +91,14 @@ export async function getProducts(): Promise<Product[]> {
   }
 }
 
-export async function getProductBySlug(slug: string): Promise<Product | undefined> {
+export async function getProductBySlug(
+  slug: string,
+  locale: string = 'en'
+): Promise<Product | undefined> {
   try {
     const raw = await sanityClient.fetch<RawProduct | null>(
       groq`*[_type == "product" && slug.current == $slug][0] ${PRODUCT_PROJECTION}`,
-      { slug }
+      { slug, locale }
     );
     return raw ? mapProduct(raw) : undefined;
   } catch (error) {
@@ -103,11 +107,14 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
   }
 }
 
-export async function getProductById(id: string): Promise<Product | undefined> {
+export async function getProductById(
+  id: string,
+  locale: string = 'en'
+): Promise<Product | undefined> {
   try {
     const raw = await sanityClient.fetch<RawProduct | null>(
       groq`*[_type == "product" && _id == $id][0] ${PRODUCT_PROJECTION}`,
-      { id }
+      { id, locale }
     );
     return raw ? mapProduct(raw) : undefined;
   } catch (error) {
@@ -116,7 +123,10 @@ export async function getProductById(id: string): Promise<Product | undefined> {
   }
 }
 
-export async function getProductsByType(type: Product['type']): Promise<Product[]> {
-  const products = await getProducts();
+export async function getProductsByType(
+  type: Product['type'],
+  locale: string = 'en'
+): Promise<Product[]> {
+  const products = await getProducts(locale);
   return products.filter((p) => p.type === type);
 }

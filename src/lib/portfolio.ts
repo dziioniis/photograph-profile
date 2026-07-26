@@ -44,7 +44,7 @@ const CATEGORY_PROJECTION = groq`{
   "id": _id,
   title,
   "slug": slug.current,
-  description,
+  "description": coalesce(description[$locale], description.en, description),
   coverPhoto
 }`;
 
@@ -88,10 +88,11 @@ function mapSeries(raw: RawSeries): Series {
   };
 }
 
-export async function getCategories(): Promise<Category[]> {
+export async function getCategories(locale: string = 'en'): Promise<Category[]> {
   try {
     const raw = await sanityClient.fetch<RawCategory[]>(
-      groq`*[_type == "category"] | order(order asc, title asc) ${CATEGORY_PROJECTION}`
+      groq`*[_type == "category"] | order(order asc, title asc) ${CATEGORY_PROJECTION}`,
+      { locale }
     );
     return raw.map(mapCategory);
   } catch (error) {
@@ -100,11 +101,14 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
-export async function getCategoryBySlug(slug: string): Promise<Category | undefined> {
+export async function getCategoryBySlug(
+  slug: string,
+  locale: string = 'en'
+): Promise<Category | undefined> {
   try {
     const raw = await sanityClient.fetch<RawCategory | null>(
       groq`*[_type == "category" && slug.current == $slug][0] ${CATEGORY_PROJECTION}`,
-      { slug }
+      { slug, locale }
     );
     return raw ? mapCategory(raw) : undefined;
   } catch (error) {

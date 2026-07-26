@@ -61,20 +61,23 @@ function mapItem(raw: RawVideoItem): VideoItem {
   };
 }
 
-export async function getVideoPage(): Promise<VideoPageData | null> {
+export async function getVideoPage(
+  locale: string = 'en'
+): Promise<VideoPageData | null> {
   try {
     const raw = await sanityClient.fetch<RawVideoPage | null>(
       groq`*[_type == "videoPage" && _id == "videoPage"][0]{
         introTitle,
-        introText,
+        "introText": coalesce(introText[$locale], introText.en, introText),
         introImage,
-        secondText,
+        "secondText": coalesce(secondText[$locale], secondText.en, secondText),
         secondImage,
         filmsTitle,
         "films": films[] ${VIDEO_ITEM_PROJECTION},
         teasersTitle,
         "teasers": teasers[] ${VIDEO_ITEM_PROJECTION}
-      }`
+      }`,
+      { locale }
     );
     if (!raw) return null;
     return {

@@ -1,4 +1,5 @@
 import { defineType, defineField, defineArrayMember } from 'sanity';
+import { allLanguagesRequired } from './localizedText';
 
 // Документ "Товар". Поля строго соответствуют типу Product из src/types/models.ts.
 // Часть полей показывается в зависимости от типа товара (preset / online_course / physical),
@@ -38,10 +39,10 @@ export const product = defineType({
     }),
     defineField({
       name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 4,
-      validation: (rule) => rule.required(),
+      title: 'Description (all languages required)',
+      type: 'localizedText',
+      validation: (rule) =>
+        rule.required().custom(allLanguagesRequired),
     }),
     defineField({
       name: 'priceCents',

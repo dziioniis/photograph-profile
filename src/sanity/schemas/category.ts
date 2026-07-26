@@ -27,9 +27,8 @@ export const category = defineType({
     }),
     defineField({
       name: 'description',
-      title: 'Description',
-      type: 'text',
-      rows: 3,
+      title: 'Description (per language)',
+      type: 'localizedText',
     }),
     defineField({
       name: 'coverPhoto',

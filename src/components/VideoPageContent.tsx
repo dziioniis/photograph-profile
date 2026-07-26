@@ -46,7 +46,6 @@ const TextBlock = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     max-width: none;
     justify-self: stretch;
-    /* На мобильном текст идёт после фото. */
     order: 2;
   }
 `;
@@ -154,7 +153,6 @@ const PlayCircle = styled.span`
   }
 `;
 
-// Преобразует ссылку YouTube/Vimeo в embed-URL; для прямых ссылок возвращает null.
 function toEmbedUrl(url: string): string | null {
   const yt = url.match(
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{6,})/

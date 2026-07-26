@@ -30,8 +30,6 @@ const Subtitle = styled.p`
 
 const Grid = styled.div`
   display: grid;
-  /* Карточки фиксированной максимальной ширины, по центру страницы —
-     одна категория не растягивается на всю страницу. */
   grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xl};

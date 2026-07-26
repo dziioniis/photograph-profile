@@ -8,10 +8,15 @@ import { getContactSettings } from '@/lib/settings';
 export const revalidate = 30;
 
 // Серверный компонент: тянет данные из Sanity и отдаёт клиентской вёрстке.
-export default async function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const [products, categories, contact] = await Promise.all([
-    getProducts(),
-    getCategories(),
+    getProducts(locale),
+    getCategories(locale),
     getContactSettings(),
   ]);
   return (

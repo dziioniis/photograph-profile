@@ -56,9 +56,8 @@ export const videoPage = defineType({
     }),
     defineField({
       name: 'introText',
-      title: 'Intro text',
-      type: 'text',
-      rows: 5,
+      title: 'Intro text (per language)',
+      type: 'localizedText',
       group: 'intro',
     }),
     defineField({
@@ -70,9 +69,8 @@ export const videoPage = defineType({
     }),
     defineField({
       name: 'secondText',
-      title: 'Second block text',
-      type: 'text',
-      rows: 5,
+      title: 'Second block text (per language)',
+      type: 'localizedText',
       group: 'second',
     }),
     defineField({

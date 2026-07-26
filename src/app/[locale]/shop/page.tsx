@@ -6,7 +6,12 @@ import { getProducts } from '@/lib/products';
 export const revalidate = 30;
 
 // Серверный компонент: тянет товары из Sanity и отдаёт клиентской вёрстке.
-export default async function ShopPage() {
-  const products = await getProducts();
+export default async function ShopPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const products = await getProducts(locale);
   return <ShopListing products={products} />;
 }

@@ -37,8 +37,6 @@ const SectionSubtitle = styled.p`
 
 const CategoriesGrid = styled.div`
   display: grid;
-  /* Карточки фиксированной максимальной ширины, по центру страницы —
-     одна категория не растягивается на всю страницу. */
   grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xl};
@@ -100,8 +98,6 @@ const CategoryDescription = styled.p`
 
 const ProductsGrid = styled.div`
   display: grid;
-  /* Карточки фиксированной максимальной ширины, по центру страницы —
-     один товар не растягивается на всю страницу. */
   grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
   justify-content: center;
   gap: ${({ theme }) => theme.spacing.xl};
