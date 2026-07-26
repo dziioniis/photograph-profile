@@ -133,7 +133,9 @@
   "videos": {
     "title": "Wideofilmowanie",
     "subtitle": "Filmowe historie, które oddają istotę Waszych wyjątkowych chwil",
-    "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo."
+    "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo.",
+    "films": "Filmy",
+    "teasers": "Teasery"
   },
   "about": {
     "title": "O mnie",

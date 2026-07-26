@@ -133,7 +133,9 @@
   "videos": {
     "title": "Videography",
     "subtitle": "Cinematic stories that capture the essence of your special moments",
-    "videoNotSupported": "Your browser does not support the video tag."
+    "videoNotSupported": "Your browser does not support the video tag.",
+    "films": "Films",
+    "teasers": "Teasers"
   },
   "about": {
     "title": "About Me",

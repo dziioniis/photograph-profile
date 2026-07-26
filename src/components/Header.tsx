@@ -182,8 +182,7 @@ export default function Header() {
 
   const navItems = [
     { label: t('nav.portfolio'), href: '/portfolio' },
-    // Видео временно скрыто
-    // { label: t('nav.video'), href: '/videos' },
+    { label: t('nav.video'), href: '/videos' },
     { label: t('nav.shop'), href: '/shop' },
     { label: t('nav.pricing'), href: '/pricing' },
     { label: t('nav.about'), href: '/about' },

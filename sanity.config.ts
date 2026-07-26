@@ -27,9 +27,17 @@ export default defineConfig({
                   .schemaType('contactSettings')
                   .documentId('contactSettings')
               ),
+            S.listItem()
+              .title('Video page')
+              .id('videoPage')
+              .child(
+                S.document().schemaType('videoPage').documentId('videoPage')
+              ),
             S.divider(),
             ...S.documentTypeListItems().filter(
-              (item) => item.getId() !== 'contactSettings'
+              (item) =>
+                item.getId() !== 'contactSettings' &&
+                item.getId() !== 'videoPage'
             ),
           ]),
     }),
