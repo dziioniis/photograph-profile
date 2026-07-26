@@ -97,7 +97,8 @@
       "preset": "Цифровий Пресет",
       "online_course": "Онлайн Курс",
       "physical": "Фізичний Товар",
-      "product": "Товар"
+      "product": "Товар",
+      "video_lut": "Відео LUT"
     },
     "product": {
       "from": "Від",
@@ -128,7 +129,12 @@
     "processing": "Обробка...",
     "courseModules": "Модулі Курсу",
     "module": "Модуль",
-    "duration": "Тривалість"
+    "duration": "Тривалість",
+    "groups": {
+      "presets": "Фотопресети",
+      "courses": "Онлайн-навчання",
+      "luts": "Відео LUT"
+    }
   },
   "videos": {
     "title": "Відеографія",

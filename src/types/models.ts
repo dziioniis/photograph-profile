@@ -26,7 +26,7 @@ export type Category = {
   seriesIds: string[];
 };
 
-export type ProductType = 'preset' | 'online_course' | 'physical';
+export type ProductType = 'preset' | 'online_course' | 'physical' | 'video_lut';
 
 export type Product = {
   id: string;

@@ -97,7 +97,8 @@
       "preset": "Digital Preset",
       "online_course": "Online Course",
       "physical": "Physical Product",
-      "product": "Product"
+      "product": "Product",
+      "video_lut": "Video LUTs"
     },
     "product": {
       "from": "From",
@@ -128,7 +129,12 @@
     "processing": "Processing...",
     "courseModules": "Course Modules",
     "module": "Module",
-    "duration": "Duration"
+    "duration": "Duration",
+    "groups": {
+      "presets": "Photo Presets",
+      "courses": "Online Learning",
+      "luts": "Video LUTs"
+    }
   },
   "videos": {
     "title": "Videography",

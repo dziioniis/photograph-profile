@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import styled from 'styled-components';
@@ -10,6 +9,9 @@ import Image from 'next/image';
 import { Product } from '@/types/models';
 
 const Card = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.background};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.borderRadius.lg};
@@ -42,11 +44,15 @@ const ProductImage = styled(Image)`
 `;
 
 const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: ${({ theme }) => theme.spacing.md};
 `;
 
 const ProductType = styled.span`
   display: inline-block;
+  align-self: flex-start;
   padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
   background-color: ${({ theme }) => theme.colors.overlay};
   border-radius: ${({ theme }) => theme.borderRadius.base};
@@ -58,14 +64,22 @@ const ProductType = styled.span`
 `;
 
 const Title = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  line-height: 1.3;
+  min-height: 2.6em;
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const Description = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
   font-size: ${({ theme }) => theme.fontSizes.sm};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  line-height: 1.5;
+  min-height: 3em;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -76,20 +90,23 @@ const PriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: ${({ theme }) => theme.spacing.md};
+  gap: ${({ theme }) => theme.spacing.sm};
+  margin-top: auto;
 `;
 
 const Price = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes['2xl']};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
 `;
 
 const ViewButton = styled(Link)`
-  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+  display: inline-block;
+  white-space: nowrap;
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
   background-color: ${({ theme }) => theme.colors.accent};
   color: ${({ theme }) => theme.colors.background};
   border-radius: ${({ theme }) => theme.borderRadius.base};
-  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -120,6 +137,8 @@ const getProductTypeLabel = (type: Product['type'], t: any) => {
       return t('types.online_course');
     case 'physical':
       return t('types.physical');
+    case 'video_lut':
+      return t('types.video_lut');
     default:
       return t('types.product');
   }

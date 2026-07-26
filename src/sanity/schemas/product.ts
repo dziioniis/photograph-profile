@@ -28,9 +28,10 @@ export const product = defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Preset (ZIP download)', value: 'preset' },
+          { title: 'Photo preset (ZIP download)', value: 'preset' },
           { title: 'Online course', value: 'online_course' },
           { title: 'Physical kit', value: 'physical' },
+          { title: 'Video LUTs (ZIP download)', value: 'video_lut' },
         ],
         layout: 'radio',
       },
@@ -113,9 +114,10 @@ export const product = defineType({
     }),
     defineField({
       name: 'downloadUrl',
-      title: 'Download URL (preset ZIP)',
+      title: 'Download URL (ZIP)',
       type: 'url',
-      hidden: ({ parent }) => parent?.type !== 'preset',
+      hidden: ({ parent }) =>
+        parent?.type !== 'preset' && parent?.type !== 'video_lut',
     }),
     defineField({
       name: 'videoPreviewUrl',

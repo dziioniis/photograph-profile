@@ -97,7 +97,8 @@
       "preset": "Preset cyfrowy",
       "online_course": "Kurs online",
       "physical": "Produkt fizyczny",
-      "product": "Produkt"
+      "product": "Produkt",
+      "video_lut": "LUT-y wideo"
     },
     "product": {
       "from": "Od",
@@ -128,7 +129,12 @@
     "processing": "Przetwarzanie...",
     "courseModules": "Moduły kursu",
     "module": "Moduł",
-    "duration": "Czas trwania"
+    "duration": "Czas trwania",
+    "groups": {
+      "presets": "Presety fotograficzne",
+      "courses": "Nauka online",
+      "luts": "LUT-y wideo"
+    }
   },
   "videos": {
     "title": "Wideofilmowanie",
