@@ -10,6 +10,7 @@
       "portfolio": "Portfolio",
       "video": "Video",
       "shop": "Shop",
+      "pricing": "Pricing",
       "about": "About",
       "testimonials": "Testimonials",
       "contact": "Contact"
@@ -206,6 +207,53 @@
       "error": "Failed to send message. Please try again."
     }
   },
+  "pricing": {
+    "title": "Pricing",
+    "intro": "A complete offer — capturing the emotions, glances and mood of your whole day.",
+    "perHour": "price per hour",
+    "includedTitle": "What's included",
+    "packages": [
+      {
+        "name": "Mini",
+        "duration": "From 2 hours",
+        "tagline": "Ideal for a short outdoor shoot or an engagement session.",
+        "price": "800 zł",
+        "included": [
+          "Photos in the photographer's signature style",
+          "50–70 edited photos per hour",
+          "Online gallery",
+          "Download link"
+        ]
+      },
+      {
+        "name": "Part-Day",
+        "duration": "From 4 to 8 hours",
+        "tagline": "A great choice for a civil ceremony, preparations or a short reportage.",
+        "price": "700 zł",
+        "included": [
+          "Selection of the best shots",
+          "50–70 edited photos per hour",
+          "Online gallery",
+          "Download link"
+        ]
+      },
+      {
+        "name": "Full Day",
+        "duration": "Over 8 hours",
+        "tagline": "A complete reportage of the whole day — from preparations to the party.",
+        "price": "600 zł",
+        "included": [
+          "Selection of the best shots",
+          "50–70 edited photos per hour",
+          "Online gallery",
+          "Wedding album",
+          "Wooden box + USB drive"
+        ]
+      }
+    ],
+    "additionallyTitle": "Additionally",
+    "additionally": "Travel, accommodation and meals (for shoots outside the city) are covered by the client. Extra edited photos beyond the package — on request."
+  },
   "footer": {
     "about": {
       "title": "About",
@@ -216,6 +264,7 @@
       "portfolio": "Portfolio",
       "videos": "Videos",
       "shop": "Shop",
+      "pricing": "Pricing",
       "about": "About",
       "testimonials": "Testimonials",
       "contact": "Contact"

@@ -185,6 +185,7 @@ export default function Header() {
     // Видео временно скрыто
     // { label: t('nav.video'), href: '/videos' },
     { label: t('nav.shop'), href: '/shop' },
+    { label: t('nav.pricing'), href: '/pricing' },
     { label: t('nav.about'), href: '/about' },
     // Отзывы временно скрыты
     // { label: t('nav.testimonials'), href: '/testimonials' },
