@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "title": "Fotograf | Profesjonalna fotografia i wideofilmowanie",
+    "description": "Profesjonalny fotograf specjalizujący się w fotografii ślubnej, portretowej i rodzinnej. Uwieczniam Twoje wyjątkowe chwile z ponadczasową elegancją.",
+    "keywords": "fotograf, fotografia ślubna, fotografia portretowa, fotografia rodzinna, wideofilmowanie"
+  },
+  "header": {
+    "logo": "Marihryn",
+    "nav": {
+      "portfolio": "Portfolio",
+      "video": "Wideo",
+      "shop": "Sklep",
+      "pricing": "Cennik",
+      "about": "O mnie",
+      "testimonials": "Opinie",
+      "contact": "Kontakt"
+    },
+    "toggleMenu": "Przełącz menu"
+  },
+  "home": {
+    "hero": {
+      "title": "Uwieczniam chwile, które trwają wiecznie",
+      "subtitle": "Profesjonalna fotografia ślubna, portretowa i rodzinna",
+      "cta": {
+        "portfolio": "Zobacz portfolio",
+        "book": "Zarezerwuj sesję",
+        "instagram": "Napisz na Instagramie"
+      },
+      "scroll": "Przewiń"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "subtitle": "Poznaj moje prace w różnych stylach fotografii"
+    },
+    "shop": {
+      "title": "Sklep",
+      "subtitle": "Presety, kursy i materiały, które podniosą poziom Twojej fotografii"
+    },
+    "testimonials": {
+      "title": "Co mówią klienci",
+      "subtitle": "Opinie osób, które powierzyły mi swoje wyjątkowe chwile"
+    },
+    "cta": {
+      "title": "Gotowi zarezerwować sesję?",
+      "subtitle": "Stwórzmy razem piękne wspomnienia",
+      "button": "Skontaktuj się"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Przeglądaj moją kolekcję prac w różnych stylach fotografii",
+    "categories": {
+      "wedding": {
+        "title": "Ślubna",
+        "description": "Uwieczniam Wasz wyjątkowy dzień z ponadczasową elegancją i emocjami"
+      },
+      "portrait": {
+        "title": "Portretowa",
+        "description": "Sesje indywidualne, które podkreślają Twoją wyjątkową osobowość"
+      },
+      "family": {
+        "title": "Rodzinna",
+        "description": "Zachowuję cenne rodzinne chwile dla przyszłych pokoleń"
+      }
+    },
+    "series": {
+      "location": "Miejsce",
+      "date": "Data",
+      "viewGallery": "Zobacz całą galerię",
+      "backToCategory": "Powrót do: {category}"
+    },
+    "errors": {
+      "categoryNotFound": "Nie znaleziono kategorii",
+      "categoryNotFoundMessage": "Kategoria, której szukasz, nie istnieje.",
+      "seriesNotFound": "Nie znaleziono serii",
+      "seriesNotFoundMessage": "Seria, której szukasz, nie istnieje."
+    },
+    "notFound": {
+      "category": {
+        "title": "Nie znaleziono kategorii",
+        "description": "Kategoria, której szukasz, nie istnieje."
+      },
+      "series": {
+        "title": "Nie znaleziono serii",
+        "description": "Seria, której szukasz, nie istnieje."
+      },
+      "backToPortfolio": "Powrót do portfolio"
+    },
+    "photography": "Fotografia",
+    "photos": "zdjęć",
+    "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo."
+  },
+  "shop": {
+    "title": "Sklep",
+    "subtitle": "Odkryj profesjonalne presety fotograficzne, kompleksowe kursy i zestawy do nauki premium",
+    "types": {
+      "preset": "Preset cyfrowy",
+      "online_course": "Kurs online",
+      "physical": "Produkt fizyczny",
+      "product": "Produkt"
+    },
+    "product": {
+      "from": "Od",
+      "price": "${price}",
+      "features": "Cechy",
+      "beforeAfter": "Przed i po",
+      "modules": "Moduły kursu",
+      "module": "Moduł {number}: {title}",
+      "viewDetails": "Zobacz szczegóły",
+      "buyNow": "Kup teraz",
+      "addToCart": "Dodaj do koszyka",
+      "orderOnInstagram": "Zamów przez Instagram",
+      "processing": "Przetwarzanie..."
+    },
+    "errors": {
+      "productNotFound": "Nie znaleziono produktu",
+      "productNotFoundMessage": "Produkt, którego szukasz, nie istnieje."
+    },
+    "notFound": {
+      "title": "Nie znaleziono produktu",
+      "description": "Produkt, którego szukasz, nie istnieje.",
+      "backToShop": "Powrót do sklepu"
+    },
+    "checkoutError": "Nie udało się rozpocząć płatności. Spróbuj ponownie.",
+    "viewDetails": "Zobacz szczegóły",
+    "orderOnInstagram": "Zamów przez Instagram",
+    "buyNow": "Kup teraz",
+    "processing": "Przetwarzanie...",
+    "courseModules": "Moduły kursu",
+    "module": "Moduł",
+    "duration": "Czas trwania"
+  },
+  "videos": {
+    "title": "Wideofilmowanie",
+    "subtitle": "Filmowe historie, które oddają istotę Waszych wyjątkowych chwil",
+    "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo."
+  },
+  "about": {
+    "title": "O mnie",
+    "subtitle": "Fotografka z pasją, uwieczniająca wyjątkowe chwile życia",
+    "intro": {
+      "p1": "Cześć, jestem profesjonalną fotografką i wideofilmowcem z ponad 10-letnim doświadczeniem w uwiecznianiu najcenniejszych chwil życia.",
+      "p2": "Moja przygoda z fotografią zaczęła się od pasji do opowiadania historii. Wierzę, że każde zdjęcie powinno opowiadać historię, budzić emocje i zachowywać wspomnienia na całe życie.",
+      "p3": "Specjalizuję się w fotografii ślubnej, portretowej i rodzinnej, wnosząc do każdej sesji minimalistyczne, a zarazem pełne emocji podejście. Moim celem jest tworzenie ponadczasowych zdjęć, które będziecie cenić przez pokolenia."
+    },
+    "approach": {
+      "title": "Moje podejście",
+      "description": "Wierzę w tworzenie autentycznych, ponadczasowych zdjęć, które opowiadają Twoją wyjątkową historię. Każda sesja jest dopasowana do Twoich potrzeb i osobowości.",
+      "p1": "Łączę wiedzę techniczną z artystycznym okiem, aby tworzyć zdjęcia piękne i autentyczne zarazem. Ściśle współpracuję z każdym klientem, aby zrozumieć jego wizję i sprawić, że każda sesja będzie swobodna, przyjemna i niezapomniana.",
+      "p2": "Niezależnie od tego, czy to ślub, sesja rodzinna czy portretowa, skupiam się na uchwyceniu prawdziwych chwil i naturalnych emocji. Mój styl edycji jest czysty i ponadczasowy, z naciskiem na naturalne światło i autentyczne kolory."
+    },
+    "equipment": {
+      "title": "Sprzęt",
+      "description": "Korzystam z profesjonalnego sprzętu, aby zapewnić najwyższą jakość"
+    }
+  },
+  "testimonials": {
+    "title": "Opinie klientów",
+    "subtitle": "Co ludzie mówią o współpracy ze mną",
+    "videoNotSupported": "Twoja przeglądarka nie obsługuje odtwarzania wideo."
+  },
+  "contact": {
+    "title": "Skontaktuj się",
+    "subtitle": "Porozmawiajmy o Twoich potrzebach fotograficznych i stwórzmy razem coś pięknego",
+    "info": {
+      "title": "Dane kontaktowe",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "location": "Lokalizacja",
+      "availability": "Dostępność",
+      "availabilityText": "Obecnie przyjmuję rezerwacje z wyprzedzeniem 2–3 miesięcy. Napisz już dziś, aby zarezerwować swój termin!",
+      "services": "Usługi",
+      "servicesItems": {
+        "wedding": "Fotografia ślubna",
+        "portrait": "Sesje portretowe",
+        "family": "Fotografia rodzinna",
+        "videography": "Wideofilmowanie"
+      },
+      "follow": "Obserwuj mnie"
+    },
+    "availability": {
+      "title": "Dostępność",
+      "description": "Obecnie przyjmuję rezerwacje z wyprzedzeniem 2–3 miesięcy. W pilnych sprawach zaznacz to w wiadomości."
+    },
+    "services": {
+      "title": "Usługi",
+      "wedding": "Fotografia i wideofilmowanie ślubne",
+      "portrait": "Sesje portretowe",
+      "family": "Fotografia rodzinna",
+      "commercial": "Projekty komercyjne"
+    },
+    "followMe": "Obserwuj mnie",
+    "instagramButton": "Napisz na Instagramie",
+    "form": {
+      "name": "Imię",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "eventType": "Rodzaj wydarzenia",
+      "eventDate": "Data wydarzenia",
+      "message": "Wiadomość",
+      "placeholder": {
+        "eventType": "Ślub, portret, sesja rodzinna itp."
+      },
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Dziękuję za wiadomość! Odezwę się wkrótce.",
+      "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie."
+    }
+  },
+  "pricing": {
+    "title": "Cennik",
+    "intro": "Kompletna oferta — uchwycenie emocji, spojrzeń i nastroju całego Waszego dnia.",
+    "perHour": "cena za godzinę",
+    "includedTitle": "Co zawiera",
+    "packages": [
+      {
+        "name": "Mini",
+        "duration": "Od 2 godzin",
+        "tagline": "Idealna na krótką sesję plenerową lub sesję narzeczeńską.",
+        "price": "800 zł",
+        "included": [
+          "Zdjęcia w autorskim stylu fotografa",
+          "50–70 obrobionych zdjęć za godzinę",
+          "Galeria online",
+          "Link do pobrania"
+        ]
+      },
+      {
+        "name": "Część dnia",
+        "duration": "Od 4 do 8 godzin",
+        "tagline": "Świetny wybór na ślub cywilny, przygotowania lub krótki reportaż.",
+        "price": "700 zł",
+        "included": [
+          "Wybór najlepszych ujęć",
+          "50–70 obrobionych zdjęć za godzinę",
+          "Galeria online",
+          "Link do pobrania"
+        ]
+      },
+      {
+        "name": "Cały dzień",
+        "duration": "Powyżej 8 godzin",
+        "tagline": "Pełny reportaż całego dnia — od przygotowań po zabawę.",
+        "price": "600 zł",
+        "included": [
+          "Wybór najlepszych ujęć",
+          "50–70 obrobionych zdjęć za godzinę",
+          "Galeria online",
+          "Album ślubny",
+          "Drewniane pudełko + pendrive"
+        ]
+      }
+    ],
+    "additionallyTitle": "Dodatkowo",
+    "additionally": "Dojazd, nocleg i wyżywienie (przy sesjach poza miastem) pokrywa klient. Dodatkowe obrobione zdjęcia poza pakietem — na życzenie."
+  },
+  "footer": {
+    "about": {
+      "title": "O mnie",
+      "description": "Profesjonalna fotografka i wideofilmowiec, uwieczniająca Wasze najcenniejsze chwile z artyzmem i pasją."
+    },
+    "quickLinks": {
+      "title": "Szybkie linki",
+      "portfolio": "Portfolio",
+      "videos": "Wideo",
+      "shop": "Sklep",
+      "pricing": "Cennik",
+      "about": "O mnie",
+      "testimonials": "Opinie",
+      "contact": "Kontakt"
+    },
+    "services": {
+      "title": "Usługi",
+      "wedding": "Fotografia ślubna",
+      "portrait": "Sesje portretowe",
+      "family": "Fotografia rodzinna",
+      "videography": "Wideofilmowanie"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "location": "Lokalizacja"
+    },
+    "social": "Obserwuj mnie",
+    "copyright": "© {year} Marihryn. Wszelkie prawa zastrzeżone."
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Wystąpił błąd",
+    "notFound": "Nie znaleziono",
+    "backHome": "Powrót na stronę główną",
+    "readMore": "Czytaj więcej",
+    "learnMore": "Dowiedz się więcej",
+    "viewAll": "Zobacz wszystko",
+    "close": "Zamknij",
+    "next": "Dalej",
+    "previous": "Wstecz",
+    "of": "z"
+  }
+}
